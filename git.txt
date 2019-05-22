@@ -1,0 +1,11 @@
+
+steps:
+
+1.initialize ===> git init
+2.check status ==> git status
+3.track the file ==> git add filename 
+4.To save history ==> git commit -m "message"
+5.add the remote origin ==> git remote add origin urllink (to know remote repository)
+6.push local repo to remote repository ==> git push origin 
+7.logs ot the history ==> git log (check the history)
+8.To clone the repo  ==> git clone url

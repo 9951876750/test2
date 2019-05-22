@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Page Title</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ajv/6.10.0/ajv.bundle.js"></script>
+<script src='data.js'></script>
+<script src='schema.js'></script>
+</head>
+<body>
+   <script>
+    document.addEventListener('DOMContentLoaded', onload);
+    
+    function onload(){
+        var ajv = new Ajv();
+        var valid = ajv.validate(schema, jsonData);
+        if(!valid) console.log(ajv.errors);
+    }
+    </script>
+
+</body>
+</html>

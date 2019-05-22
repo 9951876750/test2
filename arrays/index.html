@@ -1,0 +1,93 @@
+ <!-- <!DOCTYPE html>
+<html>
+<body>
+
+<p>Click the button to sort the array in ascending order and descending order</p>
+
+<button onclick="myFunction()">Asce</button>
+<button onclick="myFunctions()">Desc</button>
+<p id="demo"></p>
+
+<script>
+var points = ["Car", "Bus",  "Mango", "Apple"];
+document.getElementById("demo").innerHTML = points;
+
+function myFunction() {
+    points.sort();
+   document.getElementById("demo").innerHTML = points;
+
+//   points.sort(function(a, b){return a-b});
+//   document.getElementById("demo").innerHTML = points;
+}
+function myFunctions() {
+    points.sort((a,b) => (a > b ? -1 : 1))
+//   points.sort(function(a, b){return b-a});
+  document.getElementById("demo").innerHTML = points;
+}
+</script>
+
+</body>
+</html> 
+
+
+ -->
+
+ <!-- <!DOCTYPE html>
+<html>
+<body>
+
+<input type="text" id=""> 
+
+<button onclick="myFunction()">Try it</button>
+<p id="demo"></p>
+
+<script>
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo").innerHTML = fruits;
+
+function myFunction() {
+  fruits.push("Kiwi");
+  document.getElementById("demo").innerHTML = fruits;
+}
+</script>
+
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+
+<!-- <form name="myForm" onsubmit="addingForm()" action=""> -->
+  Name: <input type="text" id="fname">
+  
+  <button onclick="addingForm()">Adding to Array</button>
+<!-- </form> -->
+<p id="elements"></p>
+</body>
+<script>
+    var items=["mango", "apple", "grapes"];
+    
+    document.getElementById("elements").innerHTML=items
+    
+    function addingForm(e) {
+        // e.preventDefault();
+    var inputvalue = document.getElementById('fname').value;
+      items.push(inputvalue);
+      console.log(items);
+      
+      return document.getElementById("elements").innerHTML=items;
+    //   items.pop();
+    //   console.log(items);
+
+    //   return false;
+    // return document.getElementById("elements").innerHTML 
+    }
+    // console.log(items);
+    //console.log("items");
+    </script>
+</html>
+ 

@@ -1,0 +1,137 @@
+<html>
+    <head>
+<title>Form</title>
+<meta charset="UTF-8">
+<mete name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  .container{overflow: hidden}
+.tab{float: left}
+.tab-2{margin-left: 50px}
+.tab-2 input{display: block; margin-bottom: 10px;}
+tr{transition: all .25s ease-in-out}
+tr:hover{background-color:#EEE;cursor: pointer}
+
+</style>    
+</mete>
+    </head>
+    <body>
+        <div class="container">
+            <div class="tab tab-1">
+                <table id="table" border="1">
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Age</th>
+                    </tr>
+                    <tr>
+                        <td>AA</td>
+                        <td>BB</td>
+                        <td>222</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="tab tab-2">
+                First Name: <input type="text" name="fname" id="fname">
+                Last Name:<input type="text" name="lname" id="lname">
+                Age : <input type="text" name="age" id="age">
+
+                <button onclick="checkEmptyInput()">Add</button>
+                <button onclick="editTableSelectedRow()">Edit</button>
+                <button onclick="removeSelectedRow()">Delete</button>           
+            </div>
+        </div>
+        <script>
+                var rIndex, table = document.getElementById("table");
+            //check the empty input
+            function  checkEmptyInput() {
+                // checkEmptyInput() 
+                var isEmpty = true,
+                    fname = document.getElementById("fname").value,
+                    lname = document.getElementById("lname").value,
+                    age = document.getElementById("age").value;
+
+              if(fname == "") {
+                  alert("first name cannot be empty");
+                return
+              }
+              if(lname == "") {
+                  alert("last name cannot be empty");
+                  return
+              }
+             if(age == "") {
+                  alert("Age cannot be empty");
+                
+              }
+              else {
+                addTableRow();
+              }
+            }
+
+
+            // add row
+            function  addTableRow()  {
+
+            //    if(!checkEmptyInput()) {         
+                var row = table.insertRow(),
+            firstnameCell = row.insertCell(0),
+            lastnameCell = row.insertCell(1),
+            ageCell = row.insertCell(2),
+
+            fname = document.getElementById("fname").value,
+            lname = document.getElementById("lname").value,
+            age = document.getElementById("age").value;
+        
+            firstnameCell.innerHTML = fname;
+            lastnameCell.innerHTML = lname;
+            ageCell.innerHTML = age;
+
+            // call the function to set the event to the new row
+            selectedRowToInput();
+            //    }
+            }
+
+            function selectedRowToInput() {
+                for(var i = 0; i < table.rows.length; i++)
+                {
+                    table.rows[i].onclick = function(){
+
+                    
+                        // get the s90elected row index
+                        rIndex = this.rowIndex;
+                         console.log(rIndex);
+
+                         document.getElementById("fname").value = this.cells[0].innerHTML;    
+                        document.getElementById("lname").value = this.cells[1].innerHTML;
+                        document.getElementById("age").value = this.cells[2].innerHTML;
+                    };
+                }
+            }
+            selectedRowToInput();
+
+            function editTableSelectedRow() {
+                     var fname = document.getElementById("fname").value,
+                         lname = document.getElementById("lname").value,
+                         age = document.getElementById("age").value;
+
+                //   if(checkEmptyInput()){
+                         table.rows[rIndex].cells[0].innerHTML = fname;
+                         table.rows[rIndex].cells[1].innerHTML = lname;
+                         table.rows[rIndex].cells[2].innerHTML = age;
+                    //   }
+
+            }
+
+            // remove row
+            function removeSelectedRow() {
+                table.deleteRow(rIndex);
+
+                // clear input text
+                document.getElementById('fname').value = "";
+                document.getElementById('lname').value = "";
+                document.getElementById('age').value = "";
+            }
+            </script>
+    </body>
+
+    
+</html>

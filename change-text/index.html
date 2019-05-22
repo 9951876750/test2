@@ -1,0 +1,128 @@
+<!-- <!DOCTYPE html>
+<html>
+    <head>
+        <style>
+        .intro {
+            font-size: 50px;
+        }
+        </style>
+    </head>
+  
+<body>
+
+<h1>Finding HTML Element</h1>
+<p id="getbyId">hiii</p>
+<button onclick="getbytagfunction()">Try it</button>
+
+<script>
+
+//   var list = document.getElementsByTagName("p");
+//   list[0].innerHTML = "Milk";
+
+var a =(parseInt(prompt("Enter value")));
+var b =(parseInt(prompt("Enter value")));
+// console.log(parseInt(a+b));
+
+// var x = document.querySelectorAll("p.intro");
+function getbytagfunction() {
+   var x = document.getElementsByClassName("intro")[0].style.fontSize = "10px";
+}
+</script>
+
+</body>
+</html> -->
+
+<html>
+    <body>
+        <form name="myForm">
+            first Name  <input type="text" id="myNumber" required> <br><br>
+            Last name <input type="text" id="myNum" required ><br><br>
+            Email id  <input type="text" id="myNum1" required> <br><br>
+            Phone no <input type="number" id="myNum2" required ><br><br>
+            Address  <input type="text" id="myNum3" required> 
+
+<button type="button" onclick="myFunction()">add</button>
+</form>
+
+first Name : <div id="demo1"></div>
+Last name: <div id="demo2"></div>
+Email id : <div id="demo3"></div>
+Phone no: <div id="demo4"></div>
+Address : <div id="demo5"></div>
+<!-- total: <div id="demo6"></div> -->
+<script>
+  
+function myFunction() {
+   var x = document.getElementById("myNumber").value;
+   document.getElementById("demo1").innerHTML = x;
+
+   var y = document.getElementById("myNum").value;
+   document.getElementById("demo2").innerHTML = y;
+
+   var a = document.getElementById("myNum1").value;
+   document.getElementById("demo3").innerHTML = a;
+
+   var b = document.getElementById("myNum2").value;
+   document.getElementById("demo4").innerHTML = b;
+
+   var c = document.getElementById("myNum3").value;
+   document.getElementById("demo5").innerHTML = c;
+
+   var data= x+"\n"+ y+"\n"+ a+"\n" + b+"\n"+ c;
+//    document.getElementById("demo6").innerHTML = data;
+   alert(data);
+//    if (x == "" && y == "" && a == "" && b == "" && c == "") {
+//        alert("please enter all values");
+   
+//     //    document.getElementById('myNumber').innerHTML = x.validationMessage;
+//    } 
+//    else if(x == "") {
+//        alert("please enter x");
+
+//     //    document.getElementById('myNumber').innerHTML = "ok";
+//    }
+//    else if(y == "") {
+//        alert("please enter y");
+
+//     //    document.getElementById('myNumber').innerHTML = "ok";
+//    }
+//    else {
+    
+//        alert(data);
+//    }
+   }
+//    if (y == "") {
+//        alert("fill it");
+//        return false;
+//    }
+  // console.log(parseInt(x + y));
+ //  alert(x+y);
+//   document.getElementById("demo").innerHTML = x;
+ //  }
+
+
+</script>
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
